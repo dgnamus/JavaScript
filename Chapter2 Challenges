@@ -1,0 +1,31 @@
+//these are challenges from eloquent javascript, chapter 2
+
+//grid of # and » «
+
+let result = "";
+let size = 20;
+
+for(let y = 0; y < size; y++){
+  for(let x = 0; x < size; x++){
+    if((y+x) % 2 == 0){
+      result += "#";
+    } else {
+      result += " ";
+    }
+	}
+  result += "\n";
+}
+
+console.log(result);
+
+_________________________________________________________________________
+
+//fizzbuzz
+
+let result = "";
+for (i = 1; i <= 100; i++){
+  if(i % 3 == 0) result += "Fizz";
+  if(i % 5 == 0) result += "Buzz";
+  console.log(result || i);
+  result = "";
+}
