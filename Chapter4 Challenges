@@ -1,0 +1,34 @@
+Arrays have a reverse method that changes the array by inverting the order in which its elements appear.
+For this exercise, write two functions, reverseArray and reverseArrayInPlace.
+The first, reverseArray, takes an array as argument and produces a new array that has the same elements in the inverse order.
+The second, reverseArrayInPlace, does what the reverse method does: it modifies the array given as argument by reversing its elements.
+Neither may use the standard reverse method. 
+
+function reverseArray(array){
+  let newArray = [];
+  let length = array.length;
+  for (let i = 0; i < length; i++){
+    newArray.push(array.pop());    
+  }
+  return newArray;
+}
+array = [1,2,3,4,5];
+console.log(reverseArray(array));
+
+
+
+array = [1,2,3,4,5];
+
+function reverseArrayInPlace(array){
+  let length = array.length;
+  for(let i = array.length; i > 0 ; i--){
+    let temp = array[array.length - i];
+    array.unshift(temp);    
+  }
+  for(let i = length; i > 0; i--){
+    array.pop();
+  }
+  return array;
+}
+
+console.log(reverseArrayInPlace(array));
